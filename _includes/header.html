@@ -1,0 +1,22 @@
+<header id="header">
+  <section>
+    <h1>{{ site.title }}</h1>
+    <summary>
+      <p>The Luma Project is a multi-purpose campus in the Dominican Republic.</p>
+      <p>Luma’s mission is to advance education, technology adoption and innovations in the country and LatAm.</p>
+    </summary>
+  </section>
+  <iframe id="player" frameborder="0" height="100%" width="100%"></iframe>
+  <script>
+    var videoIDs = {{ site.videos | jsonify }};
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var videoID = videoIDs[Math.floor(Math.random()*videoIDs.length)];
+      var header = document.getElementById('header');
+      var headerWidth = parseInt(window.getComputedStyle(header).width);
+      var player = document.getElementById('player');
+      player.style.height = (headerWidth / (16/9)) + "px";
+      player.src = "https://youtube.com/embed/" + videoID + "?autoplay=1&loop=1&fs=0&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0";
+    });
+  </script>
+</header>

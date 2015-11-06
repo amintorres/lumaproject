@@ -1,0 +1,114 @@
+---
+layout: default
+
+people:
+  - name: "Rachel Inman"
+    company: "Google NY"
+    image: "circle.png"
+  - name: "Fabricio Teixeira"
+    company: "R/GA SF"
+    image: "circle.png"
+  - name: "John Tubert"
+    company: "R/GA SF"
+    image: "circle.png"
+  - name: "Lauren Bugeja"
+    company: "Google NY"
+    image: "circle.png"
+  - name: "Freddy Gomez"
+    company: "RAPP"
+    image: "circle.png"
+  - name: "Geetika Agrawal"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Korbin Hoffman"
+    company: "Product Hunt"
+    image: "circle.png"
+  - name: "Joseph Lin"
+    company: "Wink"
+    image: "circle.png"
+  - name: "Carlos Gutierrez"
+    company: "Fjord"
+    image: "circle.png"
+  - name: "Vinny DiBartolo"
+    company: "Big Spaceship"
+    image: "circle.png"
+  - name: "Nari Park"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Virgilio Santos"
+    company: "R/GA Global"
+    image: "circle.png"
+  - name: "Winston Thomas"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Paul Kim"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Joseph Oak"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Candice Hoeflinger"
+    company: "Picture Farm"
+    image: "circle.png"
+  - name: "Deroy Peraza"
+    company: "Hyperakt"
+    image: "circle.png"
+  - name: "Chris Parker"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Karin Santiago"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Kyle Bunch"
+    company: "R/GA Global"
+    image: "circle.png"
+  - name: "Chris Colborn"
+    company: "R/GA Global"
+    image: "circle.png"
+  - name: "Doris Feurstein"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Noelle Newbold"
+    company: "R/GA NY"
+    image: "circle.png"
+  - name: "Joyce Chen"
+    company: "Wednesday"
+    image: "circle.png"
+  - name: "John Blackford"
+    company: "Blackford Labs"
+    image: "circle.png"
+---
+
+{% capture about %}
+The Luma Project will sit on 153 acres over a cliff that looks out into the Atlantic Ocean. The land will house an array of structures that will make up a technology center and will be surrounded by vast vegetation and stunning ocean views.
+
+Each year, thousand of students and ten to fifteen startups will call the center home. The center will maintain a constant stream of instructors, guest speakers and mentors. Some of these will include staff, founders and CEOs of tech companies from the United States and South America.
+
+To learn more about the center or to explore the possibility of becoming part of it, email us here. We are particularly interested in teaching, speaking and mentorship engagements. You do not have to speak Spanish.
+
+If you work at Google, Facebook, or Twitter, and are from Latin America or of Latin American descent, please drop us a note. We would love to speak to you.
+
+If you are in the Dominican Republic and want to be part of our first class, send us an email describing your project and the stage you are currently at with it.
+
+- For general inquiries, [email us here](mailto:general@lumaproject.com).
+- For press inquiries, [email us here](mailto:press@lumaproject.com).
+- For interested investors, [email us here](mailto:investors@lumaproject.com).
+{% endcapture %}
+
+<section class="about">
+  <h2>About Luma</h2>
+  {{ about  | markdownify }}
+</section>
+
+<section class="people">
+  <h2>Who's on board</h2>
+  <ul>
+    {% for person in page.people %}
+    <li class="person" id="{{ person.name | split:" " | join:"-" | downcase }}">
+      <img class="person-image" src="{% if person.image %}/assets/images/{{ person.image }}{% else %}/assets/images/circle.png{% endif %}" alt="{{ person.name }}" title="{{ person.name }}" />
+      <div class="person-name">{{ person.name }}</div>
+      <div class="person-company">{{ person.company }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
