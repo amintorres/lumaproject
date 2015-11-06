@@ -105,7 +105,7 @@ If you are in the Dominican Republic and want to be part of our first class, sen
   <ul>
     {% for person in page.people %}
     <li class="person" id="{{ person.name | split:" " | join:"-" | downcase }}">
-      <img class="person-image" src="{% if person.image %}/assets/images/{{ person.image }}{% else %}/assets/images/circle.png{% endif %}" alt="{{ person.name }}" title="{{ person.name }}" />
+      <img class="person-image" src="{{ site.baseurl }}/assets/images/{{ person.image }}" alt="{{ person.name }}" title="{{ person.name }}" />
       <div class="person-name">{{ person.name }}</div>
       <div class="person-company">{{ person.company }}</div>
     </li>
