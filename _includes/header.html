@@ -11,12 +11,13 @@
     var videoIDs = {{ site.videos | jsonify }};
 
     document.addEventListener("DOMContentLoaded", function(event) {
-      var videoID = videoIDs[Math.floor(Math.random()*videoIDs.length)];
+      var randomVideoIndex = Math.floor(Math.random()*videoIDs.length);
+      var videoID = videoIDs[randomVideoIndex];
       var header = document.getElementById('header');
       var headerWidth = parseInt(window.getComputedStyle(header).width);
       var player = document.getElementById('player');
       player.style.height = (headerWidth / (16/9)) + "px";
-      player.src = "https://youtube.com/embed/" + videoID + "?autoplay=1&loop=1&fs=0&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0";
+      player.src = "https://youtube.com/embed/" + videoID + "?autoplay=1&loop=1&fs=0&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0&playlist=" + videoIDs.join(',');
     });
   </script>
 </header>
