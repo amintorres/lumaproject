@@ -21,7 +21,16 @@
     @include span-columns(3);
     @include shift(1);
 
+    @include media($medium-screen-up) {
+      @include span-columns(2);
+      @include shift(0.5);
+
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+
     background: #fff;
+    font-weight: 200;
 
     padding-right: 2em;
     padding-left: 2em;
@@ -34,36 +43,79 @@
 
     h1 {
       @include span-columns(1 of 3);
+      @include media($medium-screen-up) {
+        @include span-columns(2 of 2);
+      }
+
       font-size: 4em;
+      min-width: 170px;
     }
 
     summary {
       @include span-columns(2 of 3);
+      @include media($medium-screen-up) {
+        @include span-columns(2 of 2);
+      }
     }
   }
 }
 
 #content {
+  position: relative;
+
+  @include media($medium-screen-up) {
+    padding: 0 1em;
+  }
+
   section {
     h2 {
       font-size: em(32px);
+      letter-spacing: -0.5px;
       margin-bottom: 1em;
     }
   }
 }
 
+#player {
+  position: relative;
+}
+
+#playerShield {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 section.about {
   @include span-columns(2);
   @include shift(1);
+
+  @include media($medium-screen-up) {
+    @include span-columns(4);
+    @include shift(0);
+  }
+
+  margin-bottom: 2em;
   padding-right: 1em;
 }
 
 section.people {
   @include span-columns(5);
+  @include media($medium-screen-up) {
+    @include span-columns(4);
+  }
 
   .person {
-    @include span-columns(1 of 5);
-    @include omega(5n);
+    @include media($large-screen-up) {
+      @include span-columns(1 of 5);
+      @include omega(5n);
+    }
+
+    @include media($medium-screen-up) {
+      @include span-columns(2 of 4);
+      @include omega(2n);
+    }
+
     margin-bottom: 2em;
   }
 }
