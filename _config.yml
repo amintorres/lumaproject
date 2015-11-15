@@ -11,7 +11,7 @@ email: info@lumaproject.com
 description: "The Luma Project is a multi-purpose campus in the Dominican Republic.\n\n
 Our mission is to advance education, technology adoption and innovations in the country and Latin America."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.lumaproject.com" # the base hostname & protocol for your site
+url: "https://www.lumaproject.com" # the base hostname & protocol for your site
 
 videos:
   - kmmSN10Db6Y
