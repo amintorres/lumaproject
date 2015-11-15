@@ -7,11 +7,11 @@
 
 # Site settings
 title: luma
-email: your-email@domain.com
+email: info@lumaproject.com
 description: >
   Luma project description
-baseurl: "/lumaproject" # the subpath of your site, e.g. /blog
-url: "https://korbin.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.lumaproject.com" # the base hostname & protocol for your site
 
 videos:
   - kmmSN10Db6Y
