@@ -10,15 +10,20 @@
   <script>
     var videoIDs = {{ site.videos | jsonify }};
 
-    document.addEventListener("DOMContentLoaded", function(event) {
-      var randomVideoIndex = Math.floor(Math.random()*videoIDs.length);
-      var videoID = videoIDs[randomVideoIndex];
+    function flushPlayerHeight() {
       var header = document.getElementById('header');
       var headerWidth = parseInt(window.getComputedStyle(header).width);
       var player = document.getElementById('player');
       player.style.height = (headerWidth / (16/9)) + "px";
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var randomVideoIndex = Math.floor(Math.random()*videoIDs.length);
+      var videoID = videoIDs[randomVideoIndex];
       var playerFrame = document.getElementById('playerFrame');
       playerFrame.src = "https://youtube.com/embed/" + videoID + "?autoplay=1&loop=1&fs=0&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0&playlist=" + videoID;
+      flushPlayerHeight();
+      window.addEventListener('resize', flushPlayerHeight);
     });
   </script>
 </header>
