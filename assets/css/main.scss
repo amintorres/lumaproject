@@ -105,6 +105,19 @@ section.people {
     @include span-columns(4);
   }
 
+  h3 {
+    border-bottom: 1px solid #e5e5e5;
+    display: block;
+    font-size: em(24px);
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
+
+  ul {
+    @include clearfix;
+    margin-bottom: 90px;
+  }
+
   .person {
     @include media($large-screen-up) {
       @include span-columns(1 of 5);
